@@ -1,0 +1,152 @@
+HTML
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="urlap.css">
+    <title>Dévényi Donát</title>
+</head>
+
+<body>
+    <main>
+        <header>
+            <h1>Tavaszi Szünet Tervek Kérdőív</h1>
+            <p>Mondd el nekünk, hogyan tervezed eltölteni az idei tavaszi szünetet!</p>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="">Főoldal</a></li>
+                <li><a href="">Tervek</a></li>
+                <li><a href="">Kapcsolat</a></li>
+            </ul>
+        </nav>
+
+        <article>
+            <form action="#" method="post" enctype="multipart/form-data">
+                <fieldset>
+                    <legend>Személyes adatok</legend>
+
+                    <div class="block">
+                        <label for="nev">Név:</label>
+                        <input type="text" name="nev" id="nev" placeholder="Vezetéknév Keresztnév" required>
+                    </div>
+
+                    <div class="block">
+                        <label for="email">E-mail cím:</label>
+                        <input type="email" name="email" id="email" placeholder="pelda@email.hu" required>
+                    </div>
+
+                    <div class="block">
+                        <label for="eletkor">Életkor (év):</label>
+                        <input type="number" name="eletkor" id="eletkor" min="10" max="100" placeholder="18">
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Időzítés és Utazás</legend>
+
+                    <div class="block">
+                        <label for="szunet_kezdete">Mikor kezded a pihenést?</label>
+                        <input type="date" name="szunet_kezdete" id="szunet_kezdete">
+                    </div>
+
+                    <div class="block">
+                        <label for="elsodleges_helyszin">Hol töltöd a szünet nagy részét?</label>
+                        <select name="elsodleges_helyszin" id="elsodleges_helyszin">
+                            <option value="" disabled selected>Válassz helyszínt</option>
+                            <option value="otthon">Otthon</option>
+                            <option value="belfold">Belföldi utazás / Kirándulás</option>
+                            <option value="kulfold">Külföldi utazás</option>
+                            <option value="rokonok">Rokonoknál / Nagyszülőknél</option>
+                            <option value="egyeb">Egyéb</option>
+                        </select>
+                    </div>
+
+                    <div class="block">
+                        <label>Utazol el a szünetben?</label>
+                        <input type="radio" name="utazas" id="utazas_igen" value="igen">
+                        <label for="utazas_igen">Igen</label>
+                        
+                        <input type="radio" name="utazas" id="utazas_nem" value="nem" checked>
+                        <label for="utazas_nem">Nem</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Tervezett tevékenységek (Többet is kijelölhetsz)</legend>
+                    
+                    <div class="block">
+                        <input type="checkbox" name="tevekenyseg" id="pihenes" value="pihenes">
+                        <label for="pihenes">Alvás / Pihenés</label>
+                    </div>
+
+                    <div class="block">
+                        <input type="checkbox" name="tevekenyseg" id="tanulas" value="tanulas">
+                        <label for="tanulas">Tanulás / Felkészülés vizsgákra</label>
+                    </div>
+
+                    <div class="block">
+                        <input type="checkbox" name="tevekenyseg" id="kirandulas" value="kirandulas">
+                        <label for="kirandulas">Túrázás / Természetjárás</label>
+                    </div>
+
+                    <div class="block">
+                        <input type="checkbox" name="tevekenyseg" id="gaming" value="gaming">
+                        <label for="gaming">Videójátékok / Gamellés</label>
+                    </div>
+
+                    <div class="block">
+                        <input type="checkbox" name="tevekenyseg" id="baratok" value="baratok">
+                        <label for="baratok">Találkozás barátokkal</label>
+                    </div>
+
+                    <div class="block">
+                        <input type="checkbox" name="tevekenyseg" id="sport" value="sport">
+                        <label for="sport">Sportolás / Kerékpározás</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Egyéb részletek</legend>
+
+                    <div class="block">
+                        <label class="form-title">Mennyire várod a szünetet? (1 - egyáltalán nem, 10 - nagyon):</label>
+                        <div class="number-buttons">
+                            <input type="radio" id="v1" name="varakozas" value="1"><label for="v1">1</label>
+                            <input type="radio" id="v2" name="varakozas" value="2"><label for="v2">2</label>
+                            <input type="radio" id="v3" name="varakozas" value="3"><label for="v3">3</label>
+                            <input type="radio" id="v4" name="varakozas" value="4"><label for="v4">4</label>
+                            <input type="radio" id="v5" name="varakozas" value="5"><label for="v5">5</label>
+                            <input type="radio" id="v6" name="varakozas" value="6"><label for="v6">6</label>
+                            <input type="radio" id="v7" name="varakozas" value="7"><label for="v7">7</label>
+                            <input type="radio" id="v8" name="varakozas" value="8"><label for="v8">8</label>
+                            <input type="radio" id="v9" name="varakozas" value="9"><label for="v9">9</label>
+                            <input type="radio" id="v10" name="varakozas" value="10" checked><label for="v10">10</label>
+                        </div>
+                    </div>
+
+                    <div class="block">
+                        <label for="szin">Milyen szín írja le legjobban a tavaszi hangulatodat?</label>
+                        <input type="color" name="szin" id="szin" value="#77dd77">
+                    </div>
+
+                    <div class="block">
+                        <label for="reszletek">Írd le részletesebben a legfőbb tervedet:</label><br>
+                        <textarea name="reszletek" id="reszletek" rows="4" cols="40" placeholder="Pl.: Szeretnék elmenni a Balatonra biciklizni a barátaimmal..."></textarea>
+                    </div>
+
+                    <div class="block">
+                        <label for="kep">Tölts fel egy képet az áhított úticélról / tevékenységről (opcionális):</label>
+                        <input type="file" name="kep" id="kep" accept="image/*">
+                    </div>
+                </fieldset>
+                <div class="block actions">
+                    <input type="submit" value="Kérdőív beküldése">
+                    <input type="reset" value="Űrlap alaphelyzetbe">
+                </div>
+
+            </form>
+        </article>
+    </main>
+</body>
+</html>
