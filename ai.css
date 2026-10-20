@@ -96,13 +96,13 @@ main {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  gap: 20px; /* Távolság az Article és az Aside között */
+  gap: 20px;
   width: 100%;
 }
 
 /* --- ARTICLE (Bal oldali fő tartalom) --- */
 article.main-content {
-  flex: 2 1 0%; /* Nagyobb helyet foglal (kb. 66%) */
+  flex: 2 1 0%;
   min-width: 0;
   padding: 20px;
   border: 2px solid #0f172a;
@@ -119,20 +119,21 @@ article.main-content h2 {
   border-bottom: 2px solid #0f172a;
 }
 
-/* 6 Kártya rácsa (2 oszlop x 3 sor) Flexbox-szal */
+/* 6 Kártya rácsa Flexbox-szal */
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 16px; /* Gap a kártyák között */
+  gap: 16px;
   width: 100%;
 }
 
 .card {
-  flex: 0 0 calc(50% - 8px); /* Pontosan 2 kártya egy sorban */
+  flex: 0 0 calc(50% - 8px);
   border: 2px solid #0f172a;
   padding: 12px;
   background-color: #ffffff;
   display: flex;
+  flex-direction: row; /* Asztali nézetben egymás mellett a kép és a szöveg */
   gap: 12px;
   align-items: flex-start;
   text-align: left;
@@ -180,14 +181,14 @@ article.main-content h2 {
 
 /* --- ASIDE (Jobb oldali sáv) --- */
 aside {
-  flex: 1 1 0%; /* Kisebb helyet foglal (kb. 33%) */
+  flex: 1 1 0%;
   min-width: 0;
   padding: 20px;
   border: 2px solid #0f172a;
   background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  gap: 16px; /* Gap az Aside elemei és kártyái között */
+  gap: 16px;
   text-align: left;
 }
 
@@ -197,7 +198,6 @@ aside h2 {
   border-bottom: 2px solid #0f172a;
 }
 
-/* Aside 3 doboza egymás alatt (3 sorban) */
 .aside-box {
   border: 2px solid #0f172a;
   padding: 16px;
@@ -239,7 +239,15 @@ footer {
     flex-direction: column;
   }
 
+  /* Kártyák elrendezése mobilon */
   .card {
-    flex: 0 0 100%; /* Mobilon a kártyák egymás alá kerülnek */
+    flex: 0 0 100%; /* Egy oszlopba kerülnek a kártyák */
+    flex-direction: column; /* A KÉP A SZÖVEG FÖLÉ KERÜL MOBILON */
+    align-items: stretch;
+  }
+
+  .image-placeholder {
+    width: 100%; /* Mobilon a kép kitölti a kártya szélességét */
+    height: 140px;
   }
 }
